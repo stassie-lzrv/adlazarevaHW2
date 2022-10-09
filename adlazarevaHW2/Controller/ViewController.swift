@@ -7,7 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class WelcomeViewController: UIViewController {
+    
+    private let commentLabel=UILabel()
+    private let valueLabel=UILabel()
+    private let value: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
