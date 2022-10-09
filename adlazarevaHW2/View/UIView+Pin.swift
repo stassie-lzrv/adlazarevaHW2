@@ -13,17 +13,17 @@ extension UIView {
         case top, bottom, left, right
     }
 
-    func pin(to superview: UIView, _ sides: [PinSide]) {
+    func pin(to superview: UIView, _ sides: [PinSide : Int]) {
         for side in sides {
-            switch side {
+            switch side.key {
             case .top:
-                pinTop(to: superview)
+                pinTop(to: superview, side.value)
             case .bottom:
-                pinBottom(to: superview)
+                pinBottom(to: superview, side.value)
             case .left:
-                pinLeft(to: superview)
+                pinLeft(to: superview, side.value)
             case .right:
-                pinRight(to: superview)
+                pinRight(to: superview, side.value)
             }
         }
     }
@@ -108,6 +108,19 @@ extension UIView {
 
         return constraint
     }
+    
+    @discardableResult
+    func pinBottom(to side: NSLayoutYAxisAnchor, _ const : Int = 0) -> NSLayoutConstraint{
+        translatesAutoresizingMaskIntoConstraints = false
+        let constraint = bottomAnchor.constraint(
+            equalTo: side,
+            constant: CGFloat(const)
+        )
+        constraint.isActive=true
+        return constraint
+        
+    }
+    
 
     @discardableResult
     func pinButton(to side: NSLayoutYAxisAnchor, _ const: Int = 0) -> NSLayoutConstraint {
@@ -234,4 +247,6 @@ extension UIView {
         pinCenterX(to: superview)
         pinCenterY(to: superview)
     }
+    
+    
 }
