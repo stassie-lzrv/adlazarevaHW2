@@ -151,7 +151,7 @@ final class WelcomeViewController: UIViewController {
         self.view.addSubview(buttonsSV)
         buttonsSV.pin(to: self.view, [.left: 24, .right: 24])
         buttonsSV.pinBottom(to:
-        self.view.safeAreaLayoutGuide.bottomAnchor, 24)
+        self.view.safeAreaLayoutGuide.bottomAnchor, -12)
     }
     
 }
