@@ -27,13 +27,17 @@ final class WelcomeViewController: UIViewController {
         incrementButton.titleLabel?.font = .systemFont(ofSize:
         16.0, weight: .medium)
         incrementButton.backgroundColor = .white
-        //incrementButton.layer.applyShadow()
+        incrementButton.layer.applyShadow()
         self.view.addSubview(incrementButton)
             incrementButton.setHeight(48)
         incrementButton.pinTop(to: self.view.centerYAnchor)
             incrementButton.pin(to: self.view,[.left: 24, .right: 24])
         incrementButton.addTarget(self, action:
         #selector(incrementButtonPressed), for: .touchUpInside)
+    }
+    
+    private func applyShadow(){
+        
     }
     
     private func setupValueLabel() {
