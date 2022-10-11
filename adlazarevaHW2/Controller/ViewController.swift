@@ -36,9 +36,7 @@ final class WelcomeViewController: UIViewController {
         #selector(incrementButtonPressed), for: .touchUpInside)
     }
     
-    private func applyShadow(){
-        
-    }
+    
     
     private func setupValueLabel() {
         valueLabel.font = .systemFont(ofSize: 40.0,weight: .bold)
@@ -154,8 +152,8 @@ final class WelcomeViewController: UIViewController {
         buttonsSV.distribution = .fillEqually
         self.view.addSubview(buttonsSV)
         buttonsSV.pin(to: self.view, [.left: 24, .right: 24])
-        buttonsSV.pinBottom(to:
-        self.view.safeAreaLayoutGuide.bottomAnchor, -12)
+        buttonsSV.pinButton(to:
+        self.view.safeAreaLayoutGuide.bottomAnchor, 24)
     }
     
 }
